@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-white text-slate-800 min-h-screen antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { @apply bg-transparent; }
+::-webkit-scrollbar-thumb { @apply bg-slate-300 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-slate-400; }
+
+/* Cards */
+.card {
+  @apply bg-white rounded-xl p-5 shadow-sm border border-slate-200 transition-shadow duration-200;
+}
+.card:hover {
+  @apply shadow-md;
+}
+.card-accent {
+  @apply bg-c9-accent rounded-xl p-5 border border-c9-blue/20;
+}
+
+/* Buttons */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 cursor-pointer text-sm;
+}
+.btn:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+.btn-primary {
+  @apply bg-c9-blue hover:bg-[#2a9de0] text-white shadow-sm hover:shadow-md;
+}
+.btn-secondary {
+  @apply bg-slate-100 hover:bg-slate-200 text-slate-700;
+}
+
+/* Inputs */
+.input {
+  @apply bg-white border border-slate-300 rounded-lg px-3 py-2 text-slate-800
+         focus:outline-none focus:border-c9-blue focus:ring-2 focus:ring-c9-blue/20
+         placeholder-slate-400 text-sm transition-colors duration-200;
+}
+.select {
+  @apply bg-white border border-slate-300 rounded-lg px-3 py-2 text-slate-800
+         focus:outline-none focus:border-c9-blue focus:ring-2 focus:ring-c9-blue/20
+         text-sm cursor-pointer transition-colors duration-200;
+}
+
+/* Badges */
+.badge {
+  @apply px-2.5 py-0.5 rounded-full text-xs font-semibold inline-flex items-center;
+}
+.badge-green {
+  @apply bg-emerald-50 text-emerald-700;
+}
+.badge-red {
+  @apply bg-red-50 text-red-700;
+}
+.badge-blue {
+  @apply bg-c9-accent text-c9-blue;
+}
+.badge-yellow {
+  @apply bg-amber-50 text-amber-700;
+}
+
+/* Tables */
+table { @apply text-sm; }
+th { @apply text-slate-500 font-medium text-left; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* Range input */
+input[type="range"] {
+  @apply accent-c9-blue;
+}
+
+.shimmer-mask {
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(192, 192, 192, 0.8) 45%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(192, 192, 192, 0.8) 55%,
+    transparent 100%
+  );
+  animation: shimmer 1.8s infinite linear;
+
+  /* Mask to logo shape */
+  mask-image: url("frontend/src/assets/c9_logo.png");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  -webkit-mask-image: url("/frontend/src/assets/c9_logo.png");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+

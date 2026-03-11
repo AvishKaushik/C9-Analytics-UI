@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// const INSIGHTS_API = 'https://c9-assistant-api.onrender.com/api/v1'
-const INSIGHTS_API = 'http://localhost:8000/api/v1'
+const INSIGHTS_API = 'https://c9-analytics-api.onrender.com/api/v1'
+// const INSIGHTS_API = 'http://localhost:8000/api/v1'
 
 export const insightsApi = axios.create({ baseURL: INSIGHTS_API })
 

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const INSIGHTS_API = 'https://c9-analytics-api.onrender.com/api/v1'
-// const INSIGHTS_API = 'http://localhost:8000/api/v1'
+// Override locally with VITE_API_URL=http://localhost:8000/api/v1
+const INSIGHTS_API = import.meta.env.VITE_API_URL || 'https://c9-analytics-api.onrender.com/api/v1'
 
 export const insightsApi = axios.create({ baseURL: INSIGHTS_API })
 
